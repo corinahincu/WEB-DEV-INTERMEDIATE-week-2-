@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calling in an array context </title>
+</head>
+<body>
+  <!--  
+    Calling in an array context
+importance: 5
+What is the result? Why?
+
+let arr = ["a", "b"];
+
+arr.push(function() {
+  alert( this );
+});
+
+arr[2](); // ?
+  -->
+
+  <script>
+
+    let arr = [ "a", "b"];
+
+    arr.push(function(){
+      alert(this);
+    })
+
+    arr[2]();
+  </script>
+</body>
+</html>

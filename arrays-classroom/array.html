@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Is array copied?</title>
+</head>
+<body>
+  
+  <!--  
+    Is array copied?
+importance: 3
+What is this code going to show?
+
+let fruits = ["Apples", "Pear", "Orange"];
+
+// push a new value into the "copy"
+let shoppingCart = fruits;
+shoppingCart.push("Banana");
+
+// what's in fruits?
+alert( fruits.length ); // ?
+  -->
+
+  <script>
+    let fruits = ["Apples", "Pear", "Orange"];
+    let shoppingCart = fruits;
+
+    shoppingCart.push("Banana");
+
+    alert(fruits.length);
+  </script>
+</body>
+</html>
