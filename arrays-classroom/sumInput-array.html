@@ -21,12 +21,13 @@ Run the demo
   -->
 
   <script>
-    function sumInput(){
+    const sumInput=()=>{
       let numbers = [];
 
       while (true) {
 
         let value = prompt("A number please?", 0);
+
         
         if (value === "" || value === null || !isFinite(value)) break;
 
