@@ -41,11 +41,20 @@ push(number) {
       cb(this[`val_${i}`])
     }
   }
+  // fa-mi un for care se plimba printr-un indice care incepe de la 0 (let i = 0), un indice care e mai mic decit this.length ( i<this.length,) nu depaseste lungimea, apeleaza cb (callbackul) trimitindu-i this din obiectul curent proprietatea care contine numarul i -- cb(this[`val_${i}`])
   
   // HW3: try to do a forEachReverse (cb())
   //this works like a loop
 
-  reduce(cb, initVal){
+  forEachReverse(cb) {
+  for (let i = this.length - 1; i >= 0; i--) {
+    cb(this[`val_${i}`]);
+  }
+}
+
+// fa-mi un for care se plimba printr-un indice de la proprietatea ultimului indice (i = this.length - 1) si continuu pana i e mai mare sau egal cu 0 (i >= 0). apeleaza cb (callbackul) trimitindu-i this din obiectul curent proprietatea care contine numarul i -- cb(this[`val_${i}`])
+
+/*   reduce(cb, initVal){
     //HW4: optimize this one using for  loop
     let acc = initVal
     if ( this.length > 0){
@@ -58,8 +67,17 @@ push(number) {
       acc = cb(this.val_2, acc)
     }
     return acc
+  } */
+
+  reduce(cb, initVal) {
+  let acc = initVal;
+  for (let i = 0; i < this.length; i++) {
+    acc = cb(this[`val_${i}`], acc);
   }
-  
+  return acc;
+}
+// am adaugat initVal pentru a ne permite sa setam valoarea ( sa putem inmulti)
+  // fa-mi un for care se plimba printr-un indice care incepe de la 0 si continuu pana i e mai mic decit this.length, nu depaseste lungimea. In loop, cb este apelat trimitindu-i this din obiectul curent proprietatea care contine numarul i -- cb(this[`val_${i}`]) si acc(acumulatorul). si returnam acc.
 }
 /*
 CONTAINER FOR MAX 3 NUMBERS
